@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Food website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSEhMVFRUXFRUWFxgXGBcXGBsVFhYWFhcWFxYbHSggGBslHhUXITEhJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGhAQGy8lHyUtLS0tLS0tLy0vLS0tLS0tLS0tLS0tLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAwQCBQYBBwj/xABEEAABAwEDBwgGCQQCAgMAAAABAAIDEQQSIQUGMUFRYXETIlKBkaGx0RQWMlOS4QcVQmJygqLB8CMzQ7LC8WPSRIOT/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EADoRAAIBAgIHBgUEAgEEAwAAAAABAgMRBCESEzFBUZGhBRQVUnHRIkJhgbEGMsHw4fEjFjOSokNygv/aAAwDAQACEQMRAD8A+4oAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgPHOAxOAUN22kpX2FCfLVnZplb1c7/Wq5p47Dw2zX5/BvHCVpbIv8fkrHOezdMn8jvJYeKYbi+T9jXw+vw6o89aLN0nfC7yTxXDcXyZPh1fh1HrRZuk74XeSeK4bi+THh1fh1HrRZuk74XeSeK4bi+THh1fh1HrRZuk74XeSeK4bi+THh1fh1HrRZuk74XeSeK4bi+THh1fh1HrRZuk74XeSeK4bi+THh1fh1HrTZuk74HeSeKYbi+THh1fh1RkzOezH/IRxY/yVl2nhn83R+xD7Prrd1Res2UoZPYkY47ARXs0rpp4mlU/bJP7nPOhUh+6LLS2MggCAIAgCAIAgCAIAgCAIAgCAjnmaxpc8hrRpJVZzjCOlJ2RaEJTdoq7OXylnZpbA387v2b59i8TEdrvZRX3ft78j1aHZu+q/svc5y1WySQ1ke53E4dQ0BeTUrVKuc5N/wB4bD06dKFNWirEKzNDxAEB6gCAIAgMnxOGJBHEEIQmnsMUJPCEuDFSDYWHLU0XsvJHRdzh36Oqi6qOMrUv2yy4PNf30OerhKVTavujrsk5xRy0DuY7u7dS9rDdp06mU/hfQ8fEYGdPOOaN0vSOEIAgCAIAgCAIAgCAIAgKeU8osgZff1AaSdgWGIxEKENKX2XE2oUJVpaMTgsp5TkndeecB7LRoHmd6+XxGJqV5Xn9luX94n0NDDwoxtHmVYi2ovVI100rnNXe2RbkdBTmtfXVjr7SpyM0qt82iBllcd3FLF3NIsQQOYatcAeFUsZykpKzRXtLHVLnY11hGaQatZEKguS2aYNNS1rvxCvYiZSUdLfY9tM4ecGNb+EU7UbEI6O+5ChczfM44FxIG0koVUUtiMELEnIPpW66m2hSxXSjxISiLE5trqUw7ArXKauN7kDTTEKC50mQM4iykcuLdAOsfLd2bF6eC7QlS+Cecfx/g83F4FT+KG07JjgQCDUHEFfRRkpK62HiNNOzPVJAQBAEAQBAEAQBAQ2u0tjY57zRrRU+Q3rOrUjTg5y2IvTpyqSUY7WfOsqZQdPIXu4NGoN2L5PEV5V6mnL7Lgj6WhQjRhox/wBlaIgEFwqNYrTvWBq72yLDYDI7+mwgcagdZ8FNr7CmloL4mW22a5q61NrGTnpGSEHrHUNUIauSy2okEEClMcFNyqppPI0SodpJDC55o0VKWKyko5sxewgkEUI0oSmmrokglDa1YHcSRTsRFZRb2OxEULBCSf02SlL7u391N2Z6uHArlQaFixMBDwTTAY0rtVkZ1G01YrWgNaea68DupRTa5aLe9HgKqWOnzVy1dPJPOB0E6j5fzavU7Oxmrlq5ftfRnl4/C6S047TsV9EeKEAQBAEAQBAEAQHG545RvPELTgzF29xGA6ge/cvnu1cRpT1S2Lb6/wCD2+zqGjHWPa9noc2vJPTM2RuOgE8AShDaW0sWK1ujNK0GsHbtUp2M6lNTVy/JMXaSrXMVFIxYaHRVQGLRamU0AcNKNiNORTvGTAFrR940qo2m1lDPaVXChp4aFBojwFAEJCAuw2FpFeVYN3nipsYyqtO2iypMy6SAQ7eNCg0i7q5ihYsy2tpFBEwb/wCY96tcyVNp30mR2bBrzu80LT2opT6lMS7PIn6lLRBO11DUKhLVz6Hm7b+WiFfabgf2P82L6fs7Ea2lZ7Vl7HzmMo6qplsZtF3nIEAQBAEAQBARWqcRsc86GtLuwVVKtRU4Ob3K5enBzkorefMZpC4lx0uJJ4k1K+NlJyk5Pa8z6mMVFJLcYBVLE8Vse0Ua4gbMP3U3ZSVOMndoikeXGpNSdZUFkklZBryNBIQNJlqF8ZHPdJXdSinIzkpp/CkVpKVN2tNVdKg0V7ZmKElqz5Pe8Xm0pvKlJsynVjF2ZFabO6M0d41UNWLQmpK6IkLniA9QBAeEoDOzxBxoXUVispNK9ixao2sZdDgTWpRlINyldo1wnI0U6wrrIvJXI3vqa4dSBKxNG6oVGix0OZ9ruy3dTsO3R3jvXf2bV0K6W55ex5/aNPSp34Hcr6Y8EIAgCAIAgCA0md892zkdJzW994/6rzu1J6OHa4tL+f4O7s6GlWT4Jv8Ag4Oq+ZPoCeKUAEFgcTrNcEKSi28mQoXLNldEP7jXHgcPEKVbeZzU/lZ5anRmnJtcNtT/ANo7bhBT+ZkCg0CAlFnN2/VtNlRXsSxTTWlYiBQsEJCAlgtBZWlMdoBRMpKCltIS5C5kwNOk06lNiHfcTyTtIAJc6nAKblFFrYRutNBzQG79aE6HEpSSVVkixGpBkxldnXgpIbsZR4GirIlGwydIWvBGkYjiCD+yiEnGSkt2ZSrHSjZn01rqgEa8V9mndXPlmrOx6pICAIAgCAIDnM9Y3OjjDWudzyTdBOojVxXk9rRlKEVFN57vQ9Ls2UYzk5O2RyPoUvu5Pgd5Lw9VU8r5M9jXU/MuaHoUvu3/AAO8k1NTyvkxrqfmXND0OX3b/gd5JqanlfJjW0/MuaHokvu3/C7yTU1PK+TGtp+Zc0PRZfdv+F3kmpqeV8mNbT8y5oeiye7f8LvJRqanlfJjW0/MuaHo0nu3/C7yTU1PK+TGtp+Zc0PRpPdv+F3kmpqeV8mNbT8y5oejSdB/wu8k1M/K+TGtp+Zc0eejSdB/wnyTVT8r5Ma2n5lzR56NJ0H/AAnyTVT8r5Ma2n5lzQ9Hf0HfCfJTqp+V8mNdT8y5o8MD+g/4XeSaqp5XyGup+Zc0YmJ/u3/CfJNVPyvkxrqfmXNGJik92/4T5KdTPg+TGup+Zc0e3H64T8LvJW1cvK+TKayHnXNEPoz+g/4T5Jq58HyZbW0/MuaHoz+g/wCE+SaufB8mNbT8y5oejP6DvhPkmrnwfIa2n5lzQFnf0HfCfJNXPg+Q1tPzLmi9ZYnBwq0jTqOxZ6ufB8iJ1YNfuXM+j5OfWJmNeY2vG6F9bh3elH0X4Pm6v/cl6ssLYzCAIAgCAFAfIc5LRaZpCZr1ATdYK3W7ru3evl8RXqVJf8nLgTpOP1NA94GFMeCwOWpjUskYiVqixSOOW89MjVJq8dTQeSMSwgHQSKVSxhPHT3RsjESjYosZrGPf+TNjwTQAk7KJY3jjVszL0WTnEY0G7SeuiHXrJ2u1b1I5cnSjQGngfOiZHNUqYjckReiSjS0DeS0fupsZw71N2Ub/AN9SzBYL322flN5HGx2KliKavUi1z/lGFpsTmaG3h90eIUFZ15Q+W/oRsszjiW3RtdzR3qbCnVqVXaEXyJfQ6irXMduBCaL4GlWFen+5Neqt+SFkDiaXD1ig7dCWMYV5t2s+RNFZWk0MjK7AQf3RwfA7ZYXEKOlJNL/6sjtdlcz7N4bR+41KLHm1K06byTaIYgXGgYTwCWEMa5ZaPQnlsb26Wk8MfBDWc5LN9P8AB5HZHnQw9dB4pYoqs9yf3y/J6bK4abo4uapUb7jop95nmqbfpmYy2ctFSMNooR2hQVnUnF/ErG2zTyy6zTtx/pvcGyDVQml7iNPaF14PEOlUXB7SNcmsz7AvpS4QBAEAQBAaLPeSlimp7V0Xdtbw0b1z4rRdJpnd2dSVTEwjLZfO+w+WfWF5vPhLnb24eGC+fdFXyaPRr/p+Eqn7lo82ioLfI082Og2CPDwqtFRhbb1PQp/p/BqFsl/+s/boeutP2mwXXbSHEdTaUVVRjfORx0/0xho1NKU7/RWX8v8AgjNvmOkOcDpBZUeC01NPiuZ6k+xMDUhotJffP++tzDA/45AdlTTvbVZuhHzI8Kf6Roqd1W+H7X/J44v1McBuDu/WVpGEFvR7eB7IwmF/7aV+Lavz9iHnjENcOoj9lraD2tHq6mlJWk0/uTC1z6P6n6lXV0voc77NwTd9GPQjc55xLXE7wSp0YrejWOHpxVotJfYwN/oO7D5KbQ4mio0t8lzLMVunGHP7CfEKkqVN8Diq9lYObvaP4/BHPNI7FweeIKtGEFvRvQwdCirQsuRCA/ou7Cr2hxOl06LVm1zRm58h0h54gqujDijGOFw8HeOivSxGWv6Luwq3wcTdQpLeuaLMVrmaKAyAcCVnKnTfA4avZ2EnLScYt/Y99MmGgyfqUaun9CPDcI1ZqPQlGU56UN74fkqujT3W5nPLsXBp3SX/AJP3Kcj3mtA/HTgcVrGMN7R6NPD0YpXtl6ZEYa/ou7CrvQ4nQ40nvXMlilkb7IcOAPkqOEHtaOWtg8NWVp2frY7zMTN+C1R8tLXlGykXRRoIaGuFW0rrOxdGHwdKa0nxPhu1+zcNhsRo045WT48T6WvVOEIAgCAIDhvpUzydk+BrIaekTXgwkVDGNpekocCcQADhU1xpRUnLRRvQpabu9iOFzWtfLwB7nmSa87lXPdeeXFxpUnVdpTVRfM4/S1zcvse/hlFU7RLz7ZE1wY6WNrjgGl7a14VXOqc2tJRdvQ10op2bLnIrPSLGHJFLoEzbN0jTcMT2Jci5aZZqCtA0bXYnyUZso5o9EV72Xtdwp+ylxa2kKcSu+MjBwVTRNPYYSWfWNG3z2KbhMhMZU3RNj1sRS4JY4a6BVRcOyJDGzWa8B+6EZ8DH0YHQ7qOB70uRfij30QjV3jzTMaURybdZ7BXvQnPgRGIb0uSRmMqboWPAwqboixLHZiddAouG7GbrKBpfT8pS5F3wMTZTpvAjcUuLnz/Pl9y1tLCWvbGyrgSHA1cRiMQaEdoXt9mp6q74nJXs5WPpP0S57S2g+iWp1+S4XwyH2nsabrmu2uG3SRWuip9aE75Hl4mgo/FE+nLQ4wgCAID4Z9PMDhbYHn2HWe638TJHl/dIxYVdp6GEa0GvqfNQSNBosmjpsY3UIsd3m1nixsbY7QS1zRdElC5rmjRfAqQ7fQg0qaFeTicBJycqfI6qdbK0jfPzpsjRU2hn5GuLuwNXIsFXbtomjqwNDlPP+lW2WKn/AJJaE9TAfE9S7aXZts6j+y9zGdZvYcflDKM05rNK+Tc44dTfZHUF6MKUIftVjFtvaVoSWG8wlpGgtJaeojFXaurMg7fNfPV1RDbDeacGynS06r+0fe0jXXSPMxOBTWlT5exrTqtPM7mIXXXToOHkV5B2PNXRHPHdNNWpQWjK6OGnz6Il5kQMQdStTfI6TdQ2gHuXrR7M+DN59DmeId8lkdT6wWdzL5tMdylcXAO4GP2q7qLheFraWjos0VWmlc4W254WkzOfDIWR15jC1pF0aL4IxJ0nHCtAvXp4GmoJSV3xOaVWTdzf5Lz5geALSx0TtbmAuYfy+03hQ8Vx1ezZLODv/eRpHEPebR2cliAr6S2n4Hk9lKrm7lW8v4NO8RNLlPPtjcLNGXHpyijeLYwanrpwXXR7Ne2o/sjKWIb2HOPzrtpde9IeDsAaG8LtKdoXcsHRStomOlLadvmtnMy1AMkLYpx1Mk3tB17W+Ory8Vg3SelHNfg6Kda+UjopxcaXyGNjRiXOwAHXguKMXJ2Rq5pcTgM4c+HlxZZDdaMDKQLzvwAijG9VTuXr4fARSvUzfA5Z1m9hRybnva4jz3CZusSAV6nNAPbVbVMBSlsVvQqpyRs7T9Iji3+lZmMf0nOvAHc0NFe1YQ7MV/il0LutJnItbJPITjJI81cTpqdZOodwXppRpx4JFDtPo7grleysiNRCyW+4aP7cl88L0jWq1C7d3vMMS/8AiZ+gF1HlBAEAQGhzzzXiyjZzDIbrgb0cgFSx9KVpradBGsbDQiso3RpSqunK6PglozMmZIWOkhug/wBwOJaRtDSA4nd3rzJ42jHY7+h3PFU1G5uxk+xxxiPkuUNMXkUcTtvaR1LzpYuq5aSdvpuPJq9pyjK6b9N3U1jc37KTUvmA6PNPUHUW3iE7bEXXbKazWZPaMmWVwu8i6ManNcb3Eg1DllHGVU73uYR7WqKWayKozYhabzrQXt1NYy648XEm72Ld9oO2Uc/U66na0FG8VmT/AFfBS7yLKfmLvivVXP3ute+kea+1MRe9+hrbTkAE/wBJwH3Xnwf59q66WPWyovuj0cP2xCWVVWfFbDGHNG1O+w1o2ue2n6albSxtFb7/AGO94qludz6LkOyyMs7GSuD3x4Bwriz7IxxJGjqXi4hxlNyirXO3B4lVE0W8oSX20Gmju0hYp5o61HRTPldnzWtZoORu73OZTuJX0csXRXzHld5pJbTZtzKIFZbQxnBpd3kt8FzS7Qjf4Y9f9nPUx9OOdubsU7VmrMP7LmTj7pDXDi1xw7VtTx1OX7sv7xL0sfRqb7dSJmatqJoYru9zmU/SSryxVFfNyNZYikt4fmvN9l0Tz0Q+h6rwAPas1jKV8zCOPw8nbSHqrbKA8gaH78XeL9QtniKSV9JHTr6S3/kvepzmtBlnjYTqDS7vqPBcz7RjfKLZy1O0acNqIIs1bxobREBwf4EAd6h9oQ3RZmu1aD2exs7TmY26L9qdUaLzeb1NvV71ksfn+0mWO0c5LL1NRHmnaHVumJwB0h4xG2lMOtdKx1FceRtDHUGsmZ2bINqica2Vsop9osI4g3ld4mjNZTsbLE0n835NnZ8mP0yWezRbiL7upjf3IXPUxUI7JN9DKpjacNmZPJY77TGwObewFy6wVOAwArTdVc8cU9NZXOHxKtpfsy9T6n9HuY7Mmxuc5wknkAD3gUaGjEMYDjdrpOk7qAD6GMbGteu6j+h2CsYBAEAQAoD5lnZmk6APtDHB0Q5xB9poro+8MeK8LEdnOF5Q2fg1oUHWqKEVeTOP5Vv8C4dTI7Z9iV3lormjHl2j/o+SlUJv/ZNP9P4naornFfye8u3b3FNRPgXfYmJ2aC5r3MHSs/gKnu8/6zGX6ZryzUF/5L3DZGfwFRqJmf8A03iY/Iuaf8mfLN/gKaiZrHsHE+Xqvc9Zbw3AOI4VCnu8+Bsv09irZQ/9l7k+TsrCKS/eLqijgamo69aPDVHuL4bsHGUKmnGP0fxL3NpbstWcsNwuLiKUuuAFdZw8FmsLUvs6o9OvgsW6bjGObVtq9zSxZQu4B7u8+K07vU4HiU/07jY/L/7J/wAmL7W1xqSSd4JTu8+Bd/p/E7ZU+bj7nnpLRrp1FO7z4Ef9P4l7IdY+5k63AiheSN9U7tU4Ev8AT+Oe2PWPuYeks29xTu9TgF+nsWvk6x9yWPKV3Q89/kndqnAt4Hj1+2PWPuRvtLXGpNTtoVGoqcDnn+ncXJ3nBc4+55y7B/0VPd58DSH6dxK2U+sfcyFobt7iodCa3ET7Bxkfl6x9zF07NZ7iiw9TgV/6dxk9sFzj7ngmj3dhU93qcC0f03iF/wDF1j7mXpLNvind6nAv4Bi/J1j7nZ/R9kMTuFpcRcjfRo1mQAEE7AKg8V3YHBty1k935OLEYSeGloVI2e3c/wAH0xe2c4QBAEAQHjnUFTgAobtmwlfI4bObORs8ctnYzmuF2+TjgQahtNGG1eLiO01K8IRy43/g9vB4J0pxqSea3f5OH+qfv93zXB3j6Ht95+hnHkNztBJ/Lh21TvP0DxSW4zdm88aT3fNO9fQLGL+siORT0u75p3r6F+9vgY/VH3u75qe8/Qh4t8B9U/e7vmnefoR3r6dTw5H+93fNT3p8C6xsluAyMOl3fNHinwDxsmZjIp6X6fmq96+hXvT4dTw5CPS7vmp739CyxklsMTkcjX3fNO9XKvGSe1GByX97u+at3j6BYxrcY/VA6Xd81PenwNPEJ8OpI3Ix293zVXiivfZcAchnb3fNT3z6F12hLh1Mfqmn2u75p3m+4zeNb3Hv1X97u+ajvH0K97fDqejJZ6Xd807x9A8U3tRi/JNdJ7vmpWJtsReGNlDYjEZG+93fNW72+Bo+0pPcZDJO/u+ar3kzeOk9x3GY+VY7LEYZL2Ly+8BUCoaKEafs712YXtGnBaM7r67f8nido0KmJnrI8LWO7gna9ocxwcDrBqvYhOM1pRd0eFOEoO0lZkiuVCAIAgNRnXKW2WQggeyMTTBz2gjrrSm9ceP0u7z0f6t/Q6sFbXxv/eB88dHXEL5a59GVLTlOzwGk0rQejWp62ipotYUalTOMTOc4x2siOeVjOm0EbhFNT/Ra9xr8Oq9zPXQRNDnLYz7NraPxB7P9gFV4OuvlJ10GX4rUyX2JopPwvaT3LGVKcf3J8i0akNxI6yu1t8FmaacTA2c9E9hU3YujHk6akuyQoJM2t49QQi57LI2MXn3WDpSODR3kK0Yyk7RVykpJbWUTl+yHD0izg7b9B26Ft3Wt5WUVWN9pajY1wq10bhtDmkeKycJrJovrIlA5csjZRCbQwPOGAJYDsMgF0HrWywlZx0rf30KOvG9javs7hqrvC5rGqmmGxggYgUrWqEN2YfDjQY9leNNNFNmFNbzBkOPsVOzFLsl24mbHVwbyROwFpPirNSW4z0ocTJzB9qPrAp8lW5b0ZA6EHQ0pdlvUyZYHHUetTdkaUSZtle3QB3HxUEaUWXMmW10T7zKt6bPsuGvgVvhsROhPSj91xMa9GNWNpfZ8D6ACvrz5s9QBAEB8Y+nnK7zLBZASGBnLuGpznOcxlfw3HfEsar3HdhYZOX2PnzM47UGXOVNNFaNLqfipXr0rgeDot30Tv1s7Wuao1JJJJJxJOJJ2k611KJSwopsTYUSxFjEtGxQRYt2bKU8f9uaVm5r3AdgNFnKlCW1LkSm1sNrZ887cz/Nf3PYw94APesJYKi9xOnIvxfSHax7TIXfleP8Amsn2dS3N/wB+xbWSM3fSJadUUI6nn/koXZtPixrZFC157W2TDlRGP/G0DvNSOorWOBox3X9SHOTNDPK55vSOc9217i49pxXXGCirJWK24kdEsRYxMY2BBYyuqbDRLdnynPGWlk0guEFovuoKartaU3aFnKjB3TSzJu0dPbfpAkdHSOFschFDJW9Q6yxpGB4k03rhh2bFSvJ3XA0daVrHIGRxfyl51+tb9Tertvaa716KiraO4zL8+XrU9nJvtEjmaCCdI2F3tOHElZLDUovSUVcluT3ms5MbAtrEWLEVrlb7Esjfwvc3wKq6UXtS5BJ7iwMs2rR6TaP/ANZP/ZU7vT8q5Im8uJBLbZne3NK78Uj3eJVlSitiXIh3LGTW2jGSKR0YbpfyhY0HYTXHhiqTUNklf7EK6O6+jrOiaa3Q2a0OZMx98XrtDeaxzwSQBUc2lKa1SngaOmnb7Fa9Saptpn3ReoeQEAQBAfJvpzzee8R26NpcI2mOWmNGVLmP4AucD+ILOot524SoleDPjdVidt0e1S5Nz1rCVVs0hRnUzSM2QE4YV1VNK7gdFU0rCdGpDajBwINCCDsOB7FZNMzuZxxVOJujaa+ChtG8MNUnmkW42QDSJXb6saOoY+Kybn9Ce6Vb7OpDaIGf4y/g8N8QcexWUnvL9ynxRlDk2R/9sX9oAdhxJAHeodRLaZvC1FttzL0ebE50ho/N5KjxMC0aC+Z8jYRZGuDGzCTfytT2EALN1dL5rfYPDrdIoWyzQVo+KWA7fbb2HE9S0jKW5plZYWazWfoRjIVaFs8ZB0XrzCeAKnXW2pmDi1uDshhvt2iJvXU9mCa6+xMtGlN7EyJ+Toh/8lp/+t9O2qnWS8vU17rVe4r2iwloqHNcNoqO5wHcrKaZTUVL20SvyZ2K1yVhqr3GwsORJpRVraDa7AdW3qVJV4x2l+7yX7ml1JLTm9MwVLaja3nd2lVVeLLrDRfzdP8AJXslga886ZjBvBr2aO9WlNrYjOeFqR3X9CSTJ8VaMnB/ExzW/Fj4KFUlvQeFqpXsR2nJpjP9R7ODDecRuFMOJ71KqaWwwSbdltEs96gNA1vstGgeZ2nWoSsetQw6prPabvNe1tsdqs9sID42vIJ0Ft5pY6o6Qa4kaQaKadS0jPFYeNeEo2tI/SYNcQu8+SPUAQBAfDvpQzvtL7TLZGPdHDGbha0lpeboLi86SMaU0UXLUm27H0nZ2DpqmqjV2+hw1lnaObIwOYTjhzh95rtIO7QsJJ7VtPRnTUzM5GcZXRsF6mNdAukVaSd4Ua1aN2YOjRa0mioBqCudSSRPJZHNIEgLK6C4EDwVIzjLOLuFJPYTGB4HPlAZqo8PqPusafGgS63LoUtG91HP0LVifNStmio3pEAudxccOoaFlOVNP/kkRJR+Zkxt8TzdtUV14+00EHrGnxRRe2m8iNCSzgyOSSxsxY18jtQN4Cu+tK9hVkqr25EpVHtyJ48l2qUVc7kxqbUtAGy43AeKwliaUHZK5GlCOxXM/Vqb33+6r36Hl/A1seB4cl2yPFkl7deJ7nYKViqMtqt/foNKD2osWHKl88haGBrjhiMDuIOg9xV5QstODyKSp2+KLK1uaIJGxnnQSaWOxDcaEtOqlQVePxq+9FovSV96NRLY7s/I1/yBldxIAPHFaqV46RqpXjpCzTNjcXXL5B5l72Riec4azowUtOSDTaLX17NXFzSNbS0XabNveqamJXVRLlnc11HMsYc7aHAsr4DgqO6ycijyyciLKVqcTde7lHa2RkiNo2G7i49eCmEUlfYuLJhFbVkTZNtcNOZK+A9FxDmdV7DvCicZb1cicZb1cjnslnYS+WXlXEk3WUFSeBw7QpUpvKKsSpTeUVYjskVjkwJfGdV5wp1O0dqmTqx+ok6i+pebkSzx897yWjaQB3Cp4LPWzlkkU1k3sWZ7Bl2zn+mWXWaMWi7TeBoR0p7b5h0p7ShleMRRuYznRyEPY4GoBHtCuvClFeDcnd7UaU3pSTe1H6QyZTkYqGo5NlDtF0Yr1VsPjqn7n6llSUCAIDU5RzZsc8nKzWaKR9ALzmgkgaK7etVcIvNo3hia1OOjGTSPmf0tZmw2eNlqs0YjF8MlY32ecDdeB9nEUNNoWFWCWaPY7Mxk6knTqO+9exwrHxSRgvkcx7I7lB9oD2OOyi42pReSuj1fiTyRhm5FenbX7ILusYDvKpi5WpMmq7ROvtFlbI0teKg/yoOoryozlB3ic6bWaNfZs1omuvEucNQcRTroMV0Tx02rLI0dWTNwIaYAYblyaVzIhtVhZKKPYHbKjEcDpCvCrKGcXYlNrYYWPI0MZvNjAOomriOBJNOpTUxNSas2Wc5PabELAqEBHIzWpTINblbJ7ZmUODh7LtYPkuijWdOV928tGWizmc4py50YcKERguH3naR3L1aKVm0bUla9uJPZLGGyWU43nB8jyTsF5pKiUrqREpZSNXk6yGaQMbhXEnY3Wf5tV6tRU46TNJPRVzsYsiQNbd5MHecT26upeTLE1W73Od1JcTXzZp1NY5LoOoivfUVHFbxx9l8SuXVXijb5KyQyBtGmrjpcRid24bly1sRKq7spKTkyO35AilNSLruk3AniNBVqeKqU8ls+ojNohsWbMMbrxrIRoDqU7AMetXqY2pJWWXoWdRstWzN6GYE3bpA9pnNPWKUPWs6eKqQ339SqqOJr7FmU10jW8oTecGgBoBxNMTVdSx052jFZvItPEaMXLgfY7fmbYZoxE+zRhoFGlrQxw4PbQ+ete86cWrWPl4YyvCWkpM+TZ8ZgzWBjpInGaykgmvtxnQC6mBGq8KacQuadLRzPdwfaEK70ZK0uj/vA3H0U5yTsd6HMHckDSNzqgscTTkxXS0402Gmo4Z67Rsr7zHtHCwknVjt3+59fXoHz4QBAEBo898lG1WGeBoq5zKsG17CHtHWWgdapON4tHThKuqrRm9h+aiKYEUOsHTXYVxn2BvM0oSZHv1Bt3rcQf+K4sdK0UjGs8rHXxtXlMwJlUkAIAgCAkjjriVVsEyqSQStoVdMgqObq6loiDh8ugutUoaCefQACuAAAoOAXuUcqcfQ6aeUEWGyyXZLRLUOLOSZUXcXaaDYBU9qi0bqMfUrZZRXqXMzocJH72tHifELkx8v2x+5FZ7EdPEyq85sxLQh2rPSJPTDvTSBiYSmkDJkW1Q2C6Rdj3u8P54puKbZeht8z7Bfl5Ujms0fjPkPEL0+yqDnU1j2R/P8Ar+Di7RraMNBbX+Dtl9GeERWuztkY6N4Dmva5rgdBa4UI7CjVy0ZOLUltR8Iyfb3utMVkja7l+WbGTqFx9Hv01wDXHdReTCg9P7n1NRJUnUey1+ayPvi9Y+UCAIAgCA4PPb6OoLSXTxNLJq3nBhAEm3AigfrqNOvTVcuIpy0XKms/z/k9TBdozp2hN3j+P8HHWOwtibcY2gBxrprrrXWvnKlSU5XltPZcnLMuNbRYtgyaKoCyAsyTxzQUuDERBTcgzUEnqAjmbUKUyClaSQC4YkAmm8CoW0NqTFrnNW3J5lc20WdwvGh2Ygadx1EFevGej8Ey8Z6PwyNZlRshNbRIKjQxpBPUBg3ie/QtYaPyI1hb5UdPm/YjHC0EUJq53E6uoABeViqqnUbXoYzd5G8gZrXHJlSZVJCAICxDDTnOwGzapsZyluRJZbM+0SBjB5NbtK1o0Z1p6Ef9FKlSNGGlL/Z9ByfY2wxtjboGvWTrJ3r6yhRjRgoR3HzlarKrNykWFqZhAU4MkwMldOyGNsr/AGpA1oedtXUrqHGijRV7mjqzcVBt2W4uKTMIAgCAIAgNBl/Nps9XsoyTb9l34t+/xXnYvARrfFHKX59fc7sLjZUvhlnH8HD26wSQuuyMLTq2HgdBXg1aM6TtNWPbp1YVFeDuQwjFZPYaFhUJCAIAgCAICJ8WxWTIOTtWaRvExyXWk6CDhuBBxC9OHaGVpK7NlVyzRbyVmzHEQ51ZHDEYUaDtDdu8rGtjZTVlkisqjZv2RbVxORmWI2VwwHFVDdiYQN1vHUpsU0nwPbkY1k/zgmQvPgPSGt9lvWUuNBvay9k/I01oIJF1nScMKfdGv+Yrsw+Bq187WXF/xxOeti6VFW2vh7naZMycyBl1g4k6SdpK+jw+GhQjow572eHXrzrS0pFtbmIQBAEAQBAEAQBAEAQGEsTXC64BwOkEVHYVEoqSs0SpOLujUz5sWZ2IYWH7pI7jUdy4anZuHnut6f2x2Qx9aO+/qVTmfF7yT9P/AKrn8GpeZ9PY28UqeVdfc89T4veSfp8lHg1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfH7yT9Pkng1PzPp7DxSp5V1HqfH7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1HqfF7yT9Pkng1PzPp7DxSp5V1MmZoQjS+Q9bR/xVo9j0k85N8vYh9p1dyXX3NjZMiQR4tjFdruce/QuulgaFLOMc/rn+TmqYutUycv4Nius5ggCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgP/Z">
+    <style>
+        /* Navbar section */
+        .navbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: 0.7rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+            
+        }
+        div>.nav1{
+            font-weight: 200;
+        }
+
+
+        /* Food section */   /*style="width: 20vw; height: 60vh;"*/
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            padding: 10px;
+            margin: 0.5rem;
+
+        }
+        .foodimage{
+            width: 20vw;
+            height: 60vh;
+        }
+
+        .el1{
+            padding: 10px;
+            
+        }
+
+        .para1{
+            text-align: center;
+            font-weight: 300;
+            font-size: larger;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: bold;
+            align-items: center;
+
+        }
+        .para2{
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            align-items: center;
+
+        }
+
+        /* Carousel section  */
+
+        .options{
+            display: grid;
+            grid-template-columns: 10px 10px 10px 10px 10px 10px;
+            column-gap: 50px;
+            justify-content: center;
+        }
+        .black:hover{
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            color: white;
+            padding: 20px;
+
+        }
+        #el0 {
+            background-color: gray;
+            width: 10px;
+            height: 10px;
+            color: white;
+            padding: 20px;
+            
+        }
+
+        #el0:hover{
+            background-color: black;
+        }
+
+
+        /* About section */
+
+        .about{
+            padding: 30px;
+            margin: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .aboutme{
+            text-align: center;
+            font-weight: 200;
+        }
+
+        #image2{
+            margin: auto;
+            width: 60%;
+        }
+        .chefimg{
+            width: 60vw;
+        }
+        .iam{
+            text-align: center;
+            font-weight: 200;
+        }
+        .para4{
+            text-align: center;
+            font-weight: 100;
+
+        }
+        .para5{
+            text-align: justify;
+            font-weight: 100;
+            font-style: italic;
+
+        }
+
+        /* Footer section */
+ .footer{
+     display: flex;
+     justify-content: space-evenly;
+     overflow: scroll;
+    
+}
+.child0{
+    flex-basis: 1;
+
+}
+.child1{
+    flex-basis: 1;
+
+}
+.child2{
+    flex-basis: 3;
+}
+
+        .footerimg1{
+            width: 50px;
+            height: 50px;
+        }
+        .parent1{
+            width: 200px;
+            height: 100px;
+            border-bottom: 1px solid gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .parent2{
+            width: 200px;
+            height: 100px;
+            /* border-bottom: 1px solid gray; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+
+        }
+
+        .child_heading,.child_p1,.child_p2{
+            font-weight: 100;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .blog0{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            text-align: center;
+
+        }
+        .blog1,.blog2{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+        }
+
+        .child2 {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            align-items: center;
+            
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 1 / 4 / 2 / 5; }
+.div5 { grid-area: 1 / 5 / 2 / 6; }
+.div6 { grid-area: 1 / 6 / 2 / 7; }
+.div7 { grid-area: 1 / 7 / 2 / 8; }
+.div8 { grid-area: 2 / 1 / 3 / 2; }
+.div9 { grid-area: 2 / 2 / 3 / 3; }
+.div10 { grid-area: 2 / 3 / 3 / 4; }
+.div11 { grid-area: 2 / 4 / 3 / 5; }
+.div12 { grid-area: 2 / 5 / 3 / 6; }
+.div13 { grid-area: 2 / 6 / 3 / 7; }
+.div14 { grid-area: 3 / 1 / 4 / 2; }
+
+.div1{
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.div2,.div3,.div4,.div5,.div6,.div7,.div8,.div9,.div10,.div11,.div12,.div13,.div14{
+
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: lightgray;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+           /* MEDIA QUERIES */
+
+@media screen and (width<768px){
+    body{
+        font-size: 10px;
+    }
+    .navbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 0.4rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
+        }
+        div>.nav1{
+            font-weight: 500;
+        }
+
+        .container{
+            display: block;
+            
+            
+        }
+        .foodimage{
+            width: 90vw;
+            height: 80vh;
+            
+        }
+        .para1{
+            text-align: center;
+            font-weight: 300;
+            font-size: larger;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: bold;
+            align-items: center;
+
+        }
+        .para2{
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            align-items: center;
+
+        }
+
+        .options{
+            display: grid;
+            grid-template-columns: 10px 10px 10px 10px 10px 10px;
+            column-gap: 3rem;
+            justify-content: center;
+        }
+        .black:hover{
+            background-color: black;
+            width: 0.5rem;
+            height: 0.5rem;
+            color: white;
+            padding: 1rem;
+
+        }
+        #el0 {
+            background-color: gray;
+            width: 0.5rem;
+            height: 0.5rem;
+            color: white;
+            padding: 1rem;
+            
+        }
+
+        #el0:hover{
+            background-color: black;
+        }
+
+        .about{
+            padding: 1rem;
+            margin: 2rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+        }
+
+        .aboutme{
+            text-align: center;
+            font-weight: 200;
+        }
+
+        .chefimg{
+            width: 100%;
+            height: 30vh;
+        }
+
+        #image2{
+            margin: auto;
+            width: 50%;
+        }
+        .iam{
+            text-align: center;
+            font-weight: 200;
+        }
+        .para4{
+            text-align: center;
+            font-weight: 100;
+
+        }
+        .para5{
+            text-align: justify;
+            font-weight: 100;
+            font-style: italic;
+
+        }
+        /* Footer content */
+
+        .footer{
+     display: block;
+     justify-content: space-evenly;
+     overflow: scroll;
+    
+}
+
+        .footerimg1{
+            width: 50px;
+            height: 50px;
+        }
+        .parent1{
+            width: 200px;
+            height: 100px;
+            border-bottom: 1px solid gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .parent2{
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+
+        }
+
+        .child_heading,.child_p1,.child_p2{
+            font-weight: 100;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+    
+        }
+        .blog1,.blog2{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            /* text-align: center; */
+        }
+        .blog0{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            text-align: center;
+
+        }
+        .flexi{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .child2 {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 100;
+            align-items: center;
+            
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 1 / 4 / 2 / 5; }
+.div5 { grid-area: 1 / 5 / 2 / 6; }
+.div6 { grid-area: 1 / 6 / 2 / 7; }
+.div7 { grid-area: 1 / 7 / 2 / 8; }
+.div8 { grid-area: 2 / 1 / 3 / 2; }
+.div9 { grid-area: 2 / 2 / 3 / 3; }
+.div10 { grid-area: 2 / 3 / 3 / 4; }
+.div11 { grid-area: 2 / 4 / 3 / 5; }
+.div12 { grid-area: 2 / 5 / 3 / 6; }
+.div13 { grid-area: 2 / 6 / 3 / 7; }
+.div14 { grid-area: 3 / 1 / 4 / 2; }
+
+.div1{
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.div2,.div3,.div4,.div5,.div6,.div7,.div8,.div9,.div10,.div11,.div12,.div13,.div14{
+
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: lightgray;
+    color: rgb(0, 0, 0);
+}
+
+
+
+        
+
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div><i class="fa-solid fa-bars" style="color: #090909;"></i></div>
+        <div><h1 class="nav1">My Food</h1></div>
+        <div><h1 class="nav1">Mail</h1></div>
+    </div>
+
+    <div class="container" >     
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt=""  class="foodimage">
+            <h4 class="para1">The Perfect Sandwich, A Real NYC Classic</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/steak.jpg" alt=""  class="foodimage">
+            <h4 class="para1">Let Me Tell You About This steak</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/cherries.jpg" alt=""  class="foodimage">
+            <h4 class="para1">Cherries, interrupted</h4>
+            <p class="para2">Just some random text, lorem ipsum text  praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt=""  class="foodimage">
+            <h4 class="para1">All I Need Is a Popsicle</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/salmon.jpg" alt=""  class="foodimage">
+            <h4 class="para1">Salmon For Your Skin</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt=""  class="foodimage">
+            <h4 class="para1">The Perfect Sandwich, A  <br>Real NYC Classic</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/wine.jpg" alt=""  class="foodimage">
+            <h4 class="para1">Once Again, Robust Wine<br>and Vegetable Pasta</h4>
+            <p  class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+
+        <div class="el1">
+            <img src="https://www.w3schools.com/w3images/croissant.jpg" alt=""  class="foodimage">
+            <h4 class="para1">Le French</h4>
+            <p class="para2">Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+    </div>
+
+
+
+    <div class="options">
+        <div class="black" >&lt;&lt;</div>
+        <div class="black" id="el0">1</div>
+        <div class="black">2</div>
+        <div class="black">3</div>
+        <div class="black">4</div>
+        <div class="black" >&gt;&gt;</div>
+    </div><br><br><br>
+
+    <hr style="width: 90%; opacity: 0.5;">
+
+    <div class="about">
+        <div><h1 class="aboutme">About Me, The Food Man</h1></div>
+        <div id="image2"><img src="https://www.w3schools.com/w3images/chef.jpg" alt="" class="chefimg"></div>
+        <div><h1 class="iam">I am Who I Am!</h1></div>
+        <div><p class="para4">With Passion For Real, Good Food</p></div>
+        <div><p class="para5">Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p></div>
+    </div><br><br><br>
+
+    <hr style="width: 90%; opacity: 0.5;">
+    <!-- Footer content below -->
+
+    <div class="footer">
+
+        <div class="child0">
+            <div><h1 class="child_heading" >Footer</h1></div>
+            <div><p class="child_p1">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo  condimentum, porta lectus vitae, ultricies congue  gravida diam non fringilla.</p></div>
+            <div><p class="child_p2">Powered by w3.css</p></div>
+        </div>
+
+        <div class="child1">
+            <div><h1 class="blog0">BLOG POSTS</h1></div>
+
+            <div class="flexi">
+                <div class="parent1" >
+                    <div>
+                        <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="no image found" class="footerimg1">
+                    </div>
+                    <div>
+                        <p class="blog2">Lorem</p>
+                        <p class="blog2">Sed mattis nunc</p>
+                    </div>
+                </div>
+    
+                <div class="parent2" >
+                    <div>
+                        <img src="https://www.w3schools.com/w3images/gondol.jpg" alt="no image found" class="footerimg1">
+                    </div>
+                    <div>
+                        <p class="blog2">Ipsum</p>
+                        <p class="blog2">Praes tinci sed</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="child2">
+            <div class="div1">Travel</div>
+            <div class="div2">NYC</div>
+            <div class="div3">Dinner</div>
+            <div class="div4">Salmon</div>
+            <div class="div5">France</div>
+            <div class="div6">Drinks</div>
+            <div class="div7">ideas</div>
+            <div class="div8"> Flavors</div>
+            <div class="div9"> cusine</div>
+            <div class="div10">Chicken </div>
+            <div class="div11">Dressing </div>
+            <div class="div12">Fried </div>
+            <div class="div13">Fish </div>
+            <div class="div14">Duck </div>
+            </div>
+    </div>
+</body>
+</html>
